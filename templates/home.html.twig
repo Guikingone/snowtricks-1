@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Snowtricks{% endblock %}
+
+{%  block body %}
+    {{ include('navbar.html.twig') }}
+    <figure class="image is-2by1">
+        <img src="/images/cover_snow.jpg">
+    </figure>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Neige
+                    <span class="icon">
+                            <i class="far fa-snowflake" aria-hidden="true"></i>
+                    </span>
+                    Passion
+                    <span class="icon">
+                            <i class="far fa-snowflake" aria-hidden="true"></i>
+                        </span>
+                    Partage
+                </h1>
+                <h2 class="subtitle">
+                    Rejoins la plus grande communauté d'adeptes du snowboard !
+                </h2>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
