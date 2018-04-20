@@ -12,7 +12,7 @@ use Twig\Environment;
 class HomeController
 {
     /**
-     * @Route("/home")
+     * @Route("/")
      *
      * @param Environment $environment
      * @return Response
