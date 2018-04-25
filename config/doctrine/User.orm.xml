@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping>
+  <entity name="App\Entity\User"  table="snowtricks_user">
+    <id name="id" column="id" type="uuid">
+        <generator strategy="CUSTOM" />
+        <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+    </id>
+    <field name="name" type="string" length="60" nullable="false" unique="true" />
+    <one-to-one field="photo" target-entity="App\Entity\Photo" />
+        <cascade>
+            <cascade-remove />
+        </cascade>
+    <field name="nick" type="string" length="60" nullable="false" unique="true" />
+    <field name="password" type="string" length="80" />
+    <field name="email" type="string" length="40" nullable="false" unique="true" />
+    <one-to-many field="trick" target-entity="App\Entity\Trick" />
+    <field name="status" type="boolan" />
+    <field name="role" type="array" />
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping>
+  <entity name="App\Entity\Group" table="group">
+    <id name="id" column="id" type="uuid">
+	  	<generator strategy="CUSTOM" />
+	  	<custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+	</id>
+	<many-to-one field="name" type="string" length="60" nullable="false" unique="true" />
+	  <cascade>
+	  	<cascade-all />
+	  </cascade>
+  </entity>
+</doctrine-mapping>

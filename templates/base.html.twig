@@ -10,15 +10,16 @@
     </head>
     <body>
 
+        <!-- Navbar -->
                 <!-- desktop display -->
         <div class="columns is-mobile is-hidden-mobile">
             <div class="column is-3 is-offset-1">
-                <a href="/home"><img src="/images/snowtricks.png" alt="logo Snowtricks" title="snowtricks"></a>
+                <a href="/"><img src="/images/snowtricks.png" alt="logo Snowtricks" title="snowtricks"></a>
             </div>
             <div class="column is-6">
                 <div class="tabs is-right ">
                     <ul>
-                        <li class="is-active"><a href="/home">Accueil</a></li>
+                        <li class="is-active"><a href="/">Accueil</a></li>
                         <li><a href="#">Tricks</a></li>
                         <li><a href="#">Connexion</a></li>
                         <li><a href="#">Inscription</a></li>
@@ -76,7 +77,8 @@
                 </div>
             </nav>
         </div>
-
+        <!-- end Navbar -->
+        
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>

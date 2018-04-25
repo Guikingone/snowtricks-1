@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doctrine-mapping>
-  <entity name="trick"  table="trick">
-    <id name="id" type="integer">
-        <generator strategy="AUTO" />
+  <entity name="App\Entity\Trick"  table="trick">
+    <id name="id" column="id" type="uuid">
+        <generator strategy="CUSTOM" />
+        <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
     </id>
-    <field name="trick_name" type="string" lenght="60" nullable="false" unique="true" />
-    <field name="description" type="string" lenght="800"/>
-    <many-to-one field="trick_group" target-entity="snowtricks_group" />
-    <one-to-many field="photo" target-entity="photo" />
-    <one-to-many field="video" target-entity="video" />
-    <many-to-one field="user" target-entity="snowtricks_user" />
+    <field name="trick_name" type="string" length="60" nullable="false" unique="true" />
+    <field name="description" type="string" length="800"/>
+    <many-to-one field="trick_group" target-entity="App\Entity\Group" />
+        <cascade>
+            <cascade-persist />
+        </cascade>
+    <one-to-many field="photo" target-entity="App\Entity\Photo" />
+        <cascade>
+            <cascade-all />
+        </cascade>
+    <one-to-many field="video" target-entity="App\Entity\Video" />
+        <cascade>
+            <cascade-all />
+        </cascade>
+    <many-to-one field="trick_user" target-entity="App\Entity\User" />
     <field name="datecreate" type="date" />
     <field name="dateupdate" type="date" />
+
   </entity>
 </doctrine-mapping>

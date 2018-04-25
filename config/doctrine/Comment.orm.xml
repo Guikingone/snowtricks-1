@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping>
+  <entity name="App\Entity\Group" table="group">
+    <id name="id" column="id" type="uuid">
+	  	<generator strategy="CUSTOM" />
+	  	<custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+	</id>
+	<field name="date" type="date" nullable="false" />
+	<field name="text" type="text" nullable="false" />
+	<many-to-one field="user" target-entity="App\Entity\User" />
+	<one-to-one field="trick" target-entity="App\Entity\Trick" />
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping>
+  <entity name="App\Entity\Video" table="video">
+    <id name="id" column="id" type="uuid">
+	  	<generator strategy="CUSTOM" />
+	  	<custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
+	</id>
+	<field name="title" type="string" length="60" nullable="true" />
+	<field name="path" type="string" length="100" />
+  </entity>
+</doctrine-mapping>
