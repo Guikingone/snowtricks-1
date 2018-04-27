@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Comment
+* Comment entity
 */
-class Class
+class Comment
 {
 	/**
     * @var \Ramsey\Uuid\UuidInterface

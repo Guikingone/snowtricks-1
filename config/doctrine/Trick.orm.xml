@@ -7,21 +7,24 @@
     </id>
     <field name="trick_name" type="string" length="60" nullable="false" unique="true" />
     <field name="description" type="string" length="800"/>
-    <many-to-one field="trick_group" target-entity="App\Entity\Group" />
+    <many-to-one field="trick_group" target-entity="App\Entity\Group">
         <cascade>
             <cascade-persist />
         </cascade>
-    <one-to-many field="photo" target-entity="App\Entity\Photo" />
+    </many-to-one>
+    <one-to-many field="photo" target-entity="App\Entity\Photo">
         <cascade>
             <cascade-all />
         </cascade>
-    <one-to-many field="video" target-entity="App\Entity\Video" />
+    </one-to-many>
+    <one-to-many field="video" target-entity="App\Entity\Video">
         <cascade>
             <cascade-all />
         </cascade>
-    <many-to-one field="trick_user" target-entity="App\Entity\User" />
+    </one-to-many>
+    <many-to-one field="trick_user" target-entity="App\Entity\User">
+    </many-to-one>
     <field name="datecreate" type="date" />
     <field name="dateupdate" type="date" />
-
   </entity>
 </doctrine-mapping>
