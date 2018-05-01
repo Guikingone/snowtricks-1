@@ -42,7 +42,12 @@ class User
 	/**
 	* @var trick
 	*/
-	private $trick; 
+	private $tricks;
+
+    /**
+     * @var comment
+     */
+	private $comments;
 
 	/**
 	* boolean
@@ -105,9 +110,18 @@ class User
     /**
     * @return trick
     */
-    public function getTrick()
+    public function getTricks()
     {
-    	return $this->trick;
+    	return $this->tricks;
+    }
+
+
+    /**
+     * @return comment
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 
 	/**

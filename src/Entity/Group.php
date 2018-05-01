@@ -19,6 +19,11 @@ class Group
     */
 	private $name;
 
+    /**
+     * @var string
+     */
+	private $tricks;
+
 	/**
     * @return id
     */
@@ -34,6 +39,14 @@ class Group
 	{
 		return $this->name;
 	}
+
+    /**
+     * @return string
+     */
+    public function getTricks()
+    {
+        return $this->tricks;
+    }
 
 	/**
 	* @return Group constructor

@@ -17,10 +17,12 @@ class HomeResponder
 		$this->twig = $twig;
 	}
 
-	public function __invoke()
+	public function __invoke($tricks)
 	{
 		return new Response(
-			$this->twig->render('home.html.twig')
+			$this->twig->render('home.html.twig', [
+			    'tricks' => $tricks
+            ])
 		);
 	}
 }

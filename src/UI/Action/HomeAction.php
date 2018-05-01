@@ -2,6 +2,7 @@
 
 namespace App\UI\Action;
 
+use App\Infra\Doctrine\Repository\TrickRepository;
 use App\UI\Responder\HomeResponder;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -10,8 +11,16 @@ use Symfony\Component\Routing\Annotation\Route;
 */
 class HomeAction
 {
-	public function __invoke(HomeResponder $responder)
-	{
-		return $responder();
+    private $repository;
+
+    public function __construct(TrickRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function __invoke(HomeResponder $responder)
+    {
+        $tricks=$this->repository->getAllTricks();
+	    return $responder($tricks);
 	}
 }

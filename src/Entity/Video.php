@@ -24,33 +24,46 @@ class Video
     */
 	private $path;
 
-	/**
-    * @return id
-    */
+    /**
+     * @var $trick_video
+     */
+	private $trick_video;
+
+    /**
+     * @return UuidInterface
+     */
 	public function getId(): UuidInterface
 	{
 		return $this->id;
 	}
 
-	/**
-    * @return title
-    */
+    /**
+     * @return string
+     */
 	public function getTitle()
 	{
 		return $this->title;
 	}
 
-	/**
-    * @return path
-    */
+    /**
+     * @return string
+     */
 	public function getPath()
 	{
 		return $this->path;
 	}
 
-	/**
-    * Video constructor
-    */	
+    /**
+     * @return mixed
+     */
+    public function getTrickVideo()
+    {
+        return $this->trick_video;
+    }
+
+    /**
+     * Video constructor.
+     */
 	function __construct()
 	{
 		$this->id = Uuid::uuid4();		

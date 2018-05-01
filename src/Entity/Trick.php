@@ -32,12 +32,12 @@ class Trick
     /**
     * @var string
     */
-    private $photo;
+    private $photos;
 
     /**
     * @var string
     */
-    private $video;
+    private $videos;
 
     /**
     * @var string
@@ -67,7 +67,7 @@ class Trick
     */
     public function getTrick_name()
     {
-        return $this->name;
+        return $this->trick_name;
     }
 
     /**
@@ -83,23 +83,23 @@ class Trick
     */
     public function getTrick_group()
     {
-        return $this->group;
+        return $this->trick_group;
     }
 
     /**
     * @return photo
     */
-    public function getPhoto()
+    public function getPhotos()
     {
-        return $this->photo;
+        return $this->photos;
     }
 
     /**
     * @return video
     */
-    public function getVideo()
+    public function getVideos()
     {
-        return $this->video;
+        return $this->videos;
     }
 
     /**
@@ -107,7 +107,7 @@ class Trick
     */
     public function getTrick_user()
     {
-        return $this->user;
+        return $this->trick_user;
     }
 
     /**

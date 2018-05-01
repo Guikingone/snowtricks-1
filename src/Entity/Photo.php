@@ -24,33 +24,46 @@ class Photo
     */
 	private $path;
 
-	/**
-    * @return id
-    */
+    /**
+     * @var string
+     */
+	private $trick_photo;
+
+    /**
+     * @return UuidInterface
+     */
 	public function getId(): UuidInterface
 	{
 		return $this->id;
 	}
 
-	/**
-    * @return title
-    */
+    /**
+     * @return string
+     */
 	public function getTitle()
 	{
 		return $this->title;
 	}
 
-	/**
-    * @return path
-    */
+    /**
+     * @return string
+     */
 	public function getPath()
 	{
 		return $this->path;
 	}
 
-	/**
-    * Photo constructor
-    */	
+    /**
+     * @return string
+     */
+    public function getTrickPhoto()
+    {
+        return $this->trick_photo;
+    }
+
+    /**
+     * Photo constructor.
+     */
 	function __construct()
 	{
 		$this->id = Uuid::uuid4();		
