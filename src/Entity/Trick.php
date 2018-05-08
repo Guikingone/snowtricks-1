@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
 * Trick entity
@@ -25,41 +27,57 @@ class Trick
     private $description;
 
     /**
-    * @var string
+    * @var Group
     */
     private $trick_group;
 
     /**
-    * @var string
+    * @var Photo
     */
     private $photos;
 
     /**
-    * @var string
+    * @var Video
     */
     private $videos;
 
     /**
-    * @var string
+    * @var User
     */
     private $trick_user;
 
     /**
-    * @var datetime
+    * @var DateTime
     */
     private $datecreate;
 
     /**
-    * @var datetime
+    * @var DateTime
     */
     private $dateupdate;
+
+    /**
+     * Trick constructor
+     */
+    public function __construct($trick_name, $description, $datecreate, $dateupdate, $photos = null,
+                                $trick_user = null, $videos = null, $trick_group = null)
+    {
+        $this->id = Uuid::uuid4();
+        $this->description = $description;
+        $this->trick_group = $trick_group;
+        $this->photos = $photos;
+        $this->videos = $videos;
+        $this->trick_user = $trick_user;
+        $this->datecreate = $datecreate;
+        $this->dateupdate = $dateupdate;
+    }
 
     /**
     * @return id
     */
     public function getId(): UuidInterface
     {
-        return $this->id;
+        $this->id = Uuid::uuid4();
     }
 
     /**
@@ -124,14 +142,6 @@ class Trick
     public function getDateupdate()
     {
         return $this->dateupdate;
-    }
-
-    /**
-    * Trick constructor
-    */
-    public function __construct()
-    {
-        $this->id = Uuid::uuid4();
     }
 
     /**

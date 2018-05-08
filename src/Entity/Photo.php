@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
 
 /**
 * Photo entity
@@ -25,9 +26,26 @@ class Photo
 	private $path;
 
     /**
-     * @var string
+     * @var Trick
      */
 	private $trick_photo;
+
+    /**
+     * @var string
+     */
+	private $alt;
+
+    /**
+     * Photo constructor.
+     */
+    public function __construct($title, $path, $alt, $trick_photo = null)
+    {
+        $this->id = Uuid::uuid4();
+        $this->title = $title;
+        $this->path = $path;
+        $this->trick_photo = $trick_photo;
+        $this->alt = $alt;
+    }
 
     /**
      * @return UuidInterface
@@ -54,22 +72,22 @@ class Photo
 	}
 
     /**
-     * @return string
+     * @return Trick|null
      */
-    public function getTrickPhoto()
+    public function getTrickPhoto(): ?Trick
     {
         return $this->trick_photo;
     }
 
     /**
-     * Photo constructor.
+     * @return string
      */
-	function __construct()
-	{
-		$this->id = Uuid::uuid4();		
-	}
+    public function getAlt()
+    {
+        return $this->alt;
+    }
 
-	/**
+    /**
     * Photo update
     */
 	public function update()
