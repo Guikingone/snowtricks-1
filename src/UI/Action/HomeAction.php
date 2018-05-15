@@ -2,7 +2,7 @@
 
 namespace App\UI\Action;
 
-use App\Infra\Doctrine\Repository\TrickRepository;
+use App\Infra\Doctrine\Repository\PhotoRepository;
 use App\UI\Responder\HomeResponder;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,14 +13,14 @@ class HomeAction
 {
     private $repository;
 
-    public function __construct(TrickRepository $repository)
+    public function __construct(PhotoRepository $repository)
     {
         $this->repository = $repository;
     }
 
     public function __invoke(HomeResponder $responder)
     {
-        $tricks=$this->repository->getAllTricks();
-	    return $responder($tricks);
+        $photos=$this->repository->getAllPhotos();
+	    return $responder($photos);
 	}
 }

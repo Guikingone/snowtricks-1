@@ -26,7 +26,3 @@ yarn-error.log
 /public/images/
 ###< images folder ###
 
-
-###> fixtures ###
-/src/DataFixtures
-###< fixtures ###

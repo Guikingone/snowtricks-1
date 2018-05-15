@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
@@ -59,8 +60,8 @@ class Trick
     /**
      * Trick constructor
      */
-    public function __construct($trick_name, $description, $datecreate, $dateupdate, $photos = null,
-                                $trick_user = null, $videos = null, $trick_group = null)
+    public function __construct($trick_name, $description, $trick_group, $trick_user,
+                                $photos = null, $videos = null)
     {
         $this->id = Uuid::uuid4();
         $this->description = $description;
@@ -68,12 +69,11 @@ class Trick
         $this->photos = $photos;
         $this->videos = $videos;
         $this->trick_user = $trick_user;
-        $this->datecreate = $datecreate;
-        $this->dateupdate = $dateupdate;
+        $this->datecreate = time();
     }
 
     /**
-    * @return id
+    * @return \Ramsey\Uuid\UuidInterface
     */
     public function getId(): UuidInterface
     {
@@ -81,7 +81,7 @@ class Trick
     }
 
     /**
-    * @return trick_name
+    * @return string
     */
     public function getTrick_name()
     {
@@ -89,7 +89,7 @@ class Trick
     }
 
     /**
-    * @return description
+    * @return string
     */
     public function getDescription()
     {
@@ -97,7 +97,7 @@ class Trick
     }
 
     /**
-    * @return trick_group
+    * @return string
     */
     public function getTrick_group()
     {
@@ -121,7 +121,7 @@ class Trick
     }
 
     /**
-    * @return trick_user
+    * @return string
     */
     public function getTrick_user()
     {
@@ -129,19 +129,19 @@ class Trick
     }
 
     /**
-    * @return datecreate
+    * @return DateTime
     */
     public function getDatecreate()
     {
-        return $this->datecreate;
+        return $this->datecreate = time();
     }
 
     /**
-    * @return dateupdate
+    * @return DateTime
     */
     public function getDateupdate()
     {
-        return $this->dateupdate;
+        return $this->dateupdate = time();
     }
 
     /**
