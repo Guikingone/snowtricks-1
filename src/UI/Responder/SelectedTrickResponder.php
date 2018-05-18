@@ -5,7 +5,7 @@ namespace App\UI\Responder;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
-class TricksResponder
+class SelectedTrickResponder
 {
     private $twig;
 
@@ -17,7 +17,7 @@ class TricksResponder
     public function __invoke($tricks)
     {
         return new Response(
-            $this->twig->render('tricks.html.twig', [
+            $this->twig->render('selected_trick.html.twig', [
                 'tricks' => $tricks
             ])
         );

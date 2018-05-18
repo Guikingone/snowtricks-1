@@ -3,14 +3,14 @@
 namespace App\UI\Action;
 
 use App\Infra\Doctrine\Repository\TricksRepository;
-use App\UI\Responder\TricksResponder;
+use App\UI\Responder\SelectedTrickResponder;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route(name="tricks", path="/tricks")
+ * @Route(name="tricks", path="/trick/{$trick}")
  */
 
-class TricksAction
+class SelectedTrickAction
 {
     private $repository;
 
@@ -19,7 +19,7 @@ class TricksAction
         $this->repository = $repository;
     }
 
-    public function __invoke(TricksResponder $responder)
+    public function __invoke(SelectedTrickResponder $responder)
     {
         $tricks=$this->repository->getAllTricks();
         return $responder($tricks);
