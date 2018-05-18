@@ -17,11 +17,11 @@ class HomeResponder
 		$this->twig = $twig;
 	}
 
-	public function __invoke($photos)
+	public function __invoke($tricks)
 	{
 		return new Response(
 			$this->twig->render('home.html.twig', [
-			    'photos' => $photos
+			    'tricks' => $tricks
             ])
 		);
 	}

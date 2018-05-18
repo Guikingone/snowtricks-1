@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Snowtricks{% endblock %}
+{% block title %}Snowtricks - Accueil{% endblock %}
 
 {%  block body %}
 
@@ -38,7 +38,7 @@
 
     <div class="container" id="container">
 
-        {%  for row in photos|batch(6) %}
+        {%  for row in tricks|batch(6) %}
 
         <div class="tile is-ancestor" id="row">
 

@@ -8,24 +8,23 @@
 
 namespace App\Infra\Doctrine\Repository;
 
-use App\Entity\Photo;
 use App\Entity\Trick;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
-class PhotoRepository extends ServiceEntityRepository
+class TricksRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Photo::class);
+        parent::__construct($registry, Trick::class);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getAllPhotos()
+    public function getAllTricks()
     {
-        return $this->createQueryBuilder('photos')
+        return $this->createQueryBuilder('tricks')
                     ->getQuery()
                     ->getResult();
     }

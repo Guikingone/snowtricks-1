@@ -3,13 +3,14 @@
 namespace App\UI\Action;
 
 use App\Infra\Doctrine\Repository\TricksRepository;
-use App\UI\Responder\HomeResponder;
+use App\UI\Responder\TricksResponder;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
-*  @Route(name="home", path="/")
-*/
-class HomeAction
+ * @Route(name="tricks", path="/tricks")
+ */
+
+class TricksAction
 {
     private $repository;
 
@@ -18,9 +19,9 @@ class HomeAction
         $this->repository = $repository;
     }
 
-    public function __invoke(HomeResponder $responder)
+    public function __invoke(TricksResponder $responder)
     {
         $tricks=$this->repository->getAllTricks();
-	    return $responder($tricks);
-	}
+        return $responder($tricks);
+    }
 }

@@ -31,4 +31,5 @@ class CommentFixtures extends Fixture
         $manager->persist($comment3);
 
         $manager->flush();
+    }
 }
