@@ -10,7 +10,7 @@
 	</id>
 	<field name="title" type="string" length="60" nullable="true" />
 	<field name="path" type="string" length="100" />
-    <many-to-one field="trick_video" target-entity="App\Entity\Trick" inversed-by="videos">
+    <many-to-one field="trick_video" target-entity="App\Entity\Trick" inversed-by="video">
 	</many-to-one>
   </entity>
 </doctrine-mapping>

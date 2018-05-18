@@ -5,3 +5,22 @@
     height: 1px; width: 1px;
     margin: -1px; padding: 0; border: 0;
 }
+
+#scrollDown {
+    position: absolute;
+    top: 190px;
+    right: 80px;
+    opacity: 0.1;
+    transition: 0.3s;
+}
+
+#scrollDown:hover {opacity: 1}
+
+#scrollUp {
+    position: absolute;
+    right: 80px;
+    opacity: 0.1;
+    transition: 0.3s;
+}
+
+#scrollUp:hover {opacity: 1}

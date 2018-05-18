@@ -10,7 +10,7 @@
 	</id>
 	<field name="date" type="date" nullable="false" />
 	<field name="text" type="text" nullable="false" />
-	<many-to-one field="user" target-entity="App\Entity\User" inversed-by="comments">
+	<many-to-one field="user" target-entity="App\Entity\User" inversed-by="comment">
 	</many-to-one>
 	<one-to-one field="trick" target-entity="App\Entity\Trick">
 	</one-to-one>

@@ -7,6 +7,7 @@ var parent = document.querySelector('#container'),
     hiddenClass = "visually-hidden";
 
 
+
 [].forEach.call(items, function(item, idx){
     if (idx > maxItems - 1) {
         item.classList.add(hiddenClass);

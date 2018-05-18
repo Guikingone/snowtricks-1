@@ -42,12 +42,12 @@ class User
 	/**
 	* @var trick
 	*/
-	private $tricks;
+	private $trick;
 
     /**
      * @var comment
      */
-	private $comments;
+	private $comment;
 
 	/**
 	* boolean
@@ -58,6 +58,22 @@ class User
 	* role (array)
 	*/
 	private $role;
+
+    /**
+     * @return User constructor
+     */
+    public function __construct($name, $nick, $password, $email, $status, $role, $photo = null, $trick = null, $comment = null )
+    {
+        $this->id = Uuid::uuid4();
+        $this->name = $name;
+        $this->nick = $nick;
+        $this->password = $password;
+        $this->email = $email;
+        $this->status = $status;
+        $this->role = $role;
+        $this->photo = $photo;
+        $this->comment = $comment;
+    }
 
 	/**
     * @return id
@@ -110,18 +126,18 @@ class User
     /**
     * @return trick
     */
-    public function getTricks()
+    public function getTrick()
     {
-    	return $this->tricks;
+    	return $this->trick;
     }
 
 
     /**
      * @return comment
      */
-    public function getComments()
+    public function getComment()
     {
-        return $this->comments;
+        return $this->comment;
     }
 
 	/**
@@ -139,14 +155,6 @@ class User
 	{
 		return $this->role;
 	}
-
-	/**
-    * @return User constructor
-    */
-    public function __construct()
-    {
-        $this->id = Uuid::uuid4();
-    }
 
     /**
     * User validate

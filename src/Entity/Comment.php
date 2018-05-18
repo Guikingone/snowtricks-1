@@ -35,6 +35,17 @@ class Comment
     private $trick;
 
     /**
+     * @return Comment constructor
+     */
+    public function __construct($text, $user, $trick)
+    {
+        $this->id = Uuid::uuid4();
+        $this->text;
+        $this->user;
+        $this->trick;
+    }
+
+    /**
     * @return id
     */
 	public function getId(): UuidInterface
@@ -75,14 +86,6 @@ class Comment
 	}
  	
 	/**
-    * @return Comment constructor
-    */
-    public function __construct()
-    {
-        $this->id = Uuid::uuid4();
-    }
-
-    /**
     * Trick update
     */
     public function update()

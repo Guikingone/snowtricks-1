@@ -22,7 +22,17 @@ class Group
     /**
      * @var string
      */
-	private $tricks;
+	private $trick;
+
+    /**
+     * @return Group constructor
+     */
+    public function __construct($name, $trick = null)
+	{
+		$this->id = Uuid::uuid4();
+		$this->name = $name;
+		$this->trick = $trick;
+	}
 
 	/**
     * @return id
@@ -43,18 +53,10 @@ class Group
     /**
      * @return string
      */
-    public function getTricks()
+    public function getTrick()
     {
-        return $this->tricks;
+        return $this->trick;
     }
-
-	/**
-	* @return Group constructor
-	*/
-	public function __construct()
-	{
-		$this->id = Uuid::uuid4();
-	}
 
 	/**
 	* Group update

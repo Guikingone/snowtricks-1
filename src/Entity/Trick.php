@@ -35,12 +35,12 @@ class Trick
     /**
     * @var Photo
     */
-    private $photos;
+    private $photo;
 
     /**
     * @var Video
     */
-    private $videos;
+    private $video;
 
     /**
     * @var User
@@ -61,13 +61,13 @@ class Trick
      * Trick constructor
      */
     public function __construct($trick_name, $description, $trick_group, $trick_user,
-                                $photos = null, $videos = null)
+                                $photo = null, $video = null)
     {
         $this->id = Uuid::uuid4();
         $this->description = $description;
         $this->trick_group = $trick_group;
-        $this->photos = $photos;
-        $this->videos = $videos;
+        $this->photo = $photo;
+        $this->video = $video;
         $this->trick_user = $trick_user;
         $this->datecreate = time();
     }
@@ -107,17 +107,17 @@ class Trick
     /**
     * @return photo
     */
-    public function getPhotos()
+    public function getPhoto()
     {
-        return $this->photos;
+        return $this->photo;
     }
 
     /**
     * @return video
     */
-    public function getVideos()
+    public function getVideo()
     {
-        return $this->videos;
+        return $this->video;
     }
 
     /**

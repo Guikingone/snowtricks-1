@@ -17,9 +17,9 @@
     <field name="nick" type="string" length="60" nullable="false" unique="true" />
     <field name="password" type="string" length="80" />
     <field name="email" type="string" length="40" nullable="false" unique="true" />
-    <one-to-many field="tricks" target-entity="App\Entity\Trick" mapped-by="trick_user">
+    <one-to-many field="trick" target-entity="App\Entity\Trick" mapped-by="trick_user">
     </one-to-many>
-      <one-to-many field="comments" target-entity="App\Entity\Comment" mapped-by="user">
+      <one-to-many field="comment" target-entity="App\Entity\Comment" mapped-by="user">
       </one-to-many>
     <field name="status" type="boolean" />
     <field name="role" type="array" />
