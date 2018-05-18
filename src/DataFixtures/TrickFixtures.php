@@ -16,6 +16,8 @@ class TrickFixtures extends Fixture
         //TRICK
         $backflip = new Trick('backflip', 'Flipping backwards (like a standing backflip) off of a jump',
             'flip','Paul', $photo1);
+
+        // Fixture : $backflip = new Trick('backflip', 'Flipping backwards (like a standing backflip) off of a jump', 'flip','Paul', $this->getReference('image_1'));
         $manager->persist($backflip);
 
         $crippler = new Trick('crippler', ' Bring your knees right up to your chest, grabbing your board to help keep your body tight. Continue looking over your front shoulder, pulling with your grabbing hand if you need some extra power',
