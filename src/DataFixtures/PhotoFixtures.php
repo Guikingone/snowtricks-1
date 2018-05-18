@@ -22,6 +22,8 @@ class PhotoFixtures extends Fixture
         // PHOTO
         $photo1 = new Photo('backflip.jpeg',  'images/tricks/backflip.jpg',
             'backflip');
+
+        // For exemple : $this->addReference('image_i', $photo1);
         $manager->persist($photo1);
 
         $photo2 = new Photo('backflip2.jpeg',  'images/tricks/backflip2.jpg',
